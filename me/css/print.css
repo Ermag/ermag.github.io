@@ -1,0 +1,111 @@
+#site_header {
+	display: none;
+}
+
+.pt-page .print-photo {
+	position: absolute;
+		top: 10px;
+		left: 0;
+		z-index: 99;
+	display: block;
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	border: 2px solid #e5e5e5;
+}
+
+.mobile-header {
+	display: none !important;
+}
+
+#main.site-main {
+	height: auto;
+	margin-left: 0;
+}
+
+#main .pt-wrapper {
+	padding-left: 0;
+}
+
+#main .pt-page.pt-page-1 {
+	height: 250px;
+    background: #FFF;
+}
+
+#main #lines-demo {
+	display: none;
+}
+
+#main .home-page-block {
+	position: absolute;
+    	right: 0;
+    	top: 0;
+	height: 200px;
+    width: 400px;
+}
+
+#main .home-page-block h2 {
+	font-size: 50px;
+}
+
+#main .home-page-block .info-list li {
+	padding: 0;
+}
+
+section.pt-page {
+	padding: 0;
+}
+
+.pt-page .section-title-block {
+	margin-bottom: 10px;
+}
+
+.pt-page-2 .block-title.text-center {
+	text-align: left;
+}
+
+.pt-page-2 .service-info {
+	position: absolute;
+}
+
+.service-info.web-design {
+	left: 170px;
+}
+
+.service-info.ux {
+	left: 300px;
+}
+
+.service-row {
+	height: 130px;
+}
+
+.subpage-block .block-title h3 {
+	margin: 0;
+}
+
+.timeline .event-name,
+.timeline p {
+	margin: 0;
+}
+
+.timeline .timeline-event {
+	padding-bottom: 5px;
+}
+
+.timeline .event-date {
+	margin: 3px 0 0 -30px;
+}
+
+.skill-container .skill-percentage {
+	border: 5px solid #34c7a9;
+}
+
+.pt-page-4 {
+	height: 500px;
+}
+
+.pt-page-4,
+.pt-page-6  {
+	display: none;
+}

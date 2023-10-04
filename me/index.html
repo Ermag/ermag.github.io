@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Philip Ganchev">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<title>Philip Ganchev Resume</title>
+
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+
+	<script async src="https://google.com/recaptcha/api.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-106917050-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<!-- Please don't judge my techincal skills by what you see here :) -->
+	<div id="page" class="page">
+		<div id="page-ajax-loaded" class="page-ajax-loaded animated fadeInLeft"></div>
+
+		<!-- HEADER -->
+		<header id="site_header" class="header mobile-menu-hide">
+			<div class="my-photo">
+				<img src="images/my_photo.jpg" alt="Well... that's me" style="max-width: 300px;" />
+				<div class="mask"></div>
+			</div>
+
+			<div class="site-title-block">
+				<h1 class="site-title">Philip Ganchev</h1>
+				<!-- <p class="site-description">Resume</p> -->
+			</div>
+
+			<!-- NAVIGATION & SOCIAL BUTTONS -->
+			<div class="site-nav">
+				<!-- MAIN MENU -->
+				<ul id="nav" class="site-main-menu">
+					<li class="active"><a class="pt-trigger" href="#heading">Heading</a></li>
+					<li><a class="pt-trigger" href="#about">About</a></li>
+					<li><a class="pt-trigger" href="#resume">Resume</a></li>
+					<li><a class="pt-trigger" href="#skills">Skills</a></li>
+					<li><a class="pt-trigger" href="#portfolio">Portfolio</a></li>
+					<li><a class="pt-trigger" href="#contact">Contact</a></li>
+				</ul>
+				<!-- /MAIN MENU -->
+
+				<!-- SOCIAL BUTTONS -->
+				<ul class="s-links">
+					<li>
+						<a class="tip s-button" href="https://www.linkedin.com/in/philip-ganchev/" target="_blank" title="LinkedIn">
+							<i class="fa fa-linkedin"></i>
+						</a>
+						<a class="tip s-button" href="https://github.com/ermag" target="_blank" title="GitHub">
+							<i class="fa fa-github"></i>
+						</a>
+						<a class="tip s-button print" href="Javascript:void(0)" title="Print">
+							<i class="fa fa-print"></i>
+						</a>
+					</li>
+				</ul>
+				<!-- /SOCIAL BUTTONS -->
+			</div>
+			<!-- /NAVIGATION & SOCIAL BUTTONS -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- MOBILE HEADER -->
+		<div class="mobile-header mobile-visible">
+			<div class="mobile-logo-container">
+				<div class="mobile-site-title">Philip Ganchev</div>
+			</div>
+
+			<a class="menu-toggle mobile-visible">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		<!-- /MOBILE HEADER -->
+
+		<!-- MAIN CONTENT -->
+		<div id="main" class="site-main">
+			<!-- PAGE CHANGER WRAPPER -->
+			<div class="pt-wrapper">
+				<!-- SUBPAGES -->
+				<div class="subpages">
+					<!-- HEADING -->
+					<section data-id="#heading" class="pt-page pt-page-1 section-with-bg section-paddings-0">
+						<img class="print-photo" src="images/my_photo.jpg" alt="well... that's me" />
+
+						<div class="home-page-block-bg">
+							<div class="mask"></div>
+						</div>
+
+						<canvas id="lines-demo"></canvas>
+
+						<div class="home-page-block">
+							<div class="v-align">
+								<h2>Philip Ganchev</h2>
+								<div id="rotate" class="text-rotate" style="max-height: 34px;">
+									<div><p class="home-page-description">Software engineer</p></div>
+									<div><p class="home-page-description">aka internet explorer scientist</p></div>
+								</div>
+
+								<div class="block end" style="text-align: center">
+									<ul class="info-list">
+										<li>
+											<span class="title">Age</span>
+											<span id="info-age" class="value">25</span>
+										</li>
+										<li>
+											<span class="title">Location</span>
+											<span class="value">Sofia, Bulgaria, EU</span>
+										</li>
+										<li>
+											<span class="title">E-mail</span>
+											<span id="mail-address" class="value"><a href="mailto:philip.ganchev.eu@gmail.com">philip.ganchev.eu@gmail.com</a></span>
+										</li>
+										<!-- <li>
+											<span class="title">Phone</span>
+											<span class="value">***********</span>
+										</li> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- /HOME -->
+
+					<!-- ABOUT ME -->
+					<section data-id="#about" class="pt-page pt-page-2">
+						<div class="section-title-block">
+							<h2 class="section-title">About</h2>
+							<!-- <h5 class="section-description">My destination</h5> -->
+						</div>
+
+						<div class="row">
+							<div class="col-sm-4 col-md-4">
+								<div class="general-info">
+									<p>
+										As a highly experienced software engineer with over 10 years of experience, I have a proven track record of successfully contributing to the development and implementation of cutting-edge software solutions. Throughout my career, I have worked with a diverse range of tech startups, helping to build SaaS platforms and streamline complex processes.
+									</p>
+									<p>
+										My expertise lies in my ability to understand complex technical problems and devise effective solutions that enhance efficiency and productivity. I am skilled in utilizing various programming languages, frameworks, and platforms, and I am committed to staying up-to-date with emerging technologies.
+									</p>
+									<p>
+										With a passion for innovation and a strong commitment to quality, I am confident in my ability to bring value to any organization. I thrive in fast-paced, dynamic environments, and I am eager to apply my skills and experience to help drive success and leave a positive footprint.
+									</p>
+								</div>
+							</div>
+
+							<div class="col-sm-8 col-md-8">
+								<div class="block-title text-center">
+									<h3>Main areas of expertise</h3>
+								</div>
+
+								<div class="row service-row">
+									<div class="col-sm-6 col-md-4">
+										<div class="service-block">
+											<div class="service-info web-development">
+												<img src="images/service/web-design.png" alt="Web Development" />
+												<h4>Web Development</h4>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-6 col-md-4">
+										<div class="service-block">
+											<div class="service-info web-design">
+												<img src="images/service/mobile.png" alt="Mobile Development" />
+												<h4>Mobile Development</h4>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-6 col-md-4">
+										<div class="service-block">
+											<div class="service-info ux">
+												<img src="images/service/ux.png" alt="User Experience" />
+												<h4>UX Design</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- /ABOUT ME -->
+
+					<!-- RESUME -->
+					<section data-id="#resume" class="pt-page pt-page-3">
+						<div class="section-title-block">
+							<h2 class="section-title">Resume</h2>
+							<!-- <h5 class="section-description">8 Years of Experience</h5> -->
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6 col-md-4 subpage-block">
+								<div class="block-title">
+									<h3>Experience</h3>
+								</div>
+								<div class="timeline">
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2019 - Present</h5>
+										<h4 class="event-name">Software engineer</h4>
+										<!--<span class="event-description"></span>-->
+										<p><a href="https://mariadb.com" target="_blank">MariaDB</a></p>
+									</div>
+
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2015 - 2017</h5>
+										<h4 class="event-name">Senior front-end developer</h4>
+										<!--<span class="event-description"></span>-->
+										<p><a href="http://www.mammothdb.com" target="_blank">MammothDB (Acquired by MariaDB)</a></p>
+									</div>
+									
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2012 - 2015</h5>
+										<h4 class="event-name">Front-end developer</h4>
+										<!--<span class="event-description"></span>-->
+										<p><a href="http://www.imperiaonline.bg" target="_blank">Imperia Online</a></p>
+									</div>
+									
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">Feb - May 2012</h5>
+										<h4 class="event-name">Internship</h4>
+										<!--<span class="event-description"></span>-->
+										<p><a href="http://xs-software.com/" target="_blank">XS Software</a></p>
+									</div>
+									
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2010 - 2012</h5>
+										<h4 class="event-name">Freelancer</h4>
+										<!-- <span class="event-description">Projects for Bulgarian and foreign clients</span> -->
+										<p><a href="https://www.freelancer.com/u/ermag" target="_blank">freelancer.com</a></p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-4 subpage-block">
+								<div class="block-title">
+									<h3>Accomplishments</h3>
+								</div>
+								<div class="timeline">
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2020</h5>
+										<h4 class="event-name">Competition</h4>
+										<!--<span class="event-description"></span>-->
+										<p>1st place at Games.js hackathon</p>
+									</div>
+
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2015</h5>
+										<h4 class="event-name">Certificate</h4>
+										<!--<span class="event-description"></span>-->
+										<p>Certificate in Advanced English – Cambridge Language Assessment</p>
+									</div>
+									
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2012</h5>
+										<h4 class="event-name">Competition</h4>
+										<!--<span class="event-description"></span>-->
+										<p>3rd place at National Competition for Web Developers in category Web Development</p>
+									</div>
+									
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2011</h5>
+										<h4 class="event-name">Competition</h4>
+										<!--<span class="event-description"></span>-->
+										<p>1st place at National Competition Innovation Camp 2011-2012</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-4 subpage-block">
+								<div class="block-title">
+									<h3>Education</h3>
+								</div>
+								<div class="timeline">
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2007 - 2012</h5>
+										<h4 class="event-name">Economics and Management</h4>
+										<!--<span class="event-description"></span>-->
+										<p>National High School in Finance and Business, Sofia</p>
+									</div>
+									
+									<div class="timeline-event te-primary">
+										<h5 class="event-date">2000 - 2007</h5>
+										<h4 class="event-name">Foreign Languages</h4>
+										<!--<span class="event-description"></span>-->
+										<p>121 Mid School “George Izmirliev”</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- /RESUME -->
+
+					<!-- SKILLS -->
+					<section data-id="#skills" class="pt-page pt-page-3">
+						<div class="section-title-block">
+							<h2 class="section-title">Skills</h2>
+							<!-- <h5 class="section-description">and interests</h5> -->
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6 col-md-6 subpage-block">
+								<div class="block-title">
+									<h3>Tech Stacks</h3>
+								</div>
+								<div class="timeline">
+									<div class="timeline-event te-primary">
+										<!--<h5 class="event-date"></h5>-->
+										<h4 class="event-name">Front-end</h4>
+										<!--<span class="event-description"></span>-->
+										<p>HTML | CSS | JavaScript | TypeScript<br />Vue | React | Webpack | Vite</p>
+									</div>
+
+									<div class="timeline-event te-primary">
+										<!--<h5 class="event-date"></h5>-->
+										<h4 class="event-name">Back-end</h4>
+										<!--<span class="event-description"></span>-->
+										<p>Node.js | Python<br>Express | Flask</p>
+									</div>
+
+									<div class="timeline-event te-primary">
+										<!--<h5 class="event-date"></h5>-->
+										<h4 class="event-name">Mobile</h4>
+										<!--<span class="event-description"></span>-->
+										<p>Ionic | Cordova | Capacitor</p>
+									</div>
+
+									<div class="timeline-event te-primary">
+										<!--<h5 class="event-date"></h5>-->
+										<h4 class="event-name">Databases</h4>
+										<!--<span class="event-description"></span>-->
+										<p>MariaDB (MySQL) | MongoDB</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-6 subpage-block">
+								<div class="block-title">
+									<h3>Tools</h3>
+								</div>
+								<div class="timeline">
+									<div class="timeline-event te-primary">
+										<!--<h5 class="event-date"></h5>-->
+										<h4 class="event-name">Development</h4>
+										<!--<span class="event-description"></span>-->
+										<p>VS Code | Git (GitHub) | Docker</p>
+									</div>
+
+									<div class="timeline-event te-primary">
+										<!--<h5 class="event-date"></h5>-->
+										<h4 class="event-name">UI/UX</h4>
+										<!--<span class="event-description"></span>-->
+										<p>Photoshop | Figma | Moqups</p>
+									</div>
+
+									<div class="timeline-event te-primary">
+										<!--<h5 class="event-date"></h5>-->
+										<h4 class="event-name">Issue Tracking & Docs</h4>
+										<!--<span class="event-description"></span>-->
+										<p>Jira | Trello | Confluence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- /SKILLS -->
+
+					<!-- RECENT PROJECTS -->
+					<section data-id="#portfolio" class="pt-page pt-page-4">
+						<div class="section-title-block">
+							<h2 class="section-title">Portfolio</h2>
+							<!-- <h5 class="section-description">that I worked on</h5> -->
+						</div>
+
+						<div class="portfolio-content">
+							<div id="portfolio_grid" class="portfolio-grid portfolio-masonry masonry-grid-3">
+								<!-- Fixional -->
+								<figure class="item">
+									<a class="ajax-page-load" href="fixional.html">
+										<img src="images/projects/fixional.jpg" alt="Fixional" />
+										<div>
+											<h5 class="name">Fixional</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+								<!-- Twitch Alter -->
+								<figure class="item">
+									<a class="ajax-page-load" href="twitch-alter.html">
+										<img src="images/projects/alter.jpg" alt="Twitch Alter" />
+										<div>
+											<h5 class="name">Alter - Twitch Extension</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+								<!-- Twitch Dota 2 Overlay -->
+								<figure class="item">
+									<a class="ajax-page-load" href="twitch-dota2.html">
+										<img src="images/projects/dota2-profile.jpg" alt="Twitch Dota 2 Overlay" />
+										<div>
+											<h5 class="name">Dota 2 Overlay - Twitch Extension</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+								<!-- Space Polyglot -->
+								<figure class="item">
+									<a class="ajax-page-load" href="space-polyglot.html">
+										<img src="images/projects/space-polyglot.jpg" alt="Space Polyglot" />
+										<div>
+											<h5 class="name">Space Polyglot</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+								<!-- DelivMe -->
+								<figure class="item">
+									<a class="ajax-page-load" href="delivme.html">
+										<img src="images/projects/delivme.jpg" alt="DelivMe" />
+										<div>
+											<h5 class="name">DelivMe</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+								<!-- Imperial Hero -->
+								<figure class="item">
+									<a class="ajax-page-load" href="imperial-hero.html">
+										<img src="images/projects/imperial-hero.jpg" alt="Imperial Hero II" />
+										<div>
+											<h5 class="name">Imperial Hero II</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+								<!-- Imperia Online -->
+								<figure class="item">
+									<a class="ajax-page-load" href="imperia-online.html">
+										<img src="images/projects/imperia-online.jpg" alt="Imperia Online" />
+										<div>
+											<h5 class="name">Imperia Online</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+								<!-- 1Legal.net -->
+								<figure class="item">
+									<a class="ajax-page-load" href="1legalnet.html">
+										<img src="images/projects/1legalnet.jpg" alt="1Legal.net" />
+										<div>
+											<h5 class="name">1Legal.net</h5>
+											<small>Details</small>
+											<i class="fa fa-file-text-o"></i>
+										</div>
+									</a>
+								</figure>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</section>
+					<!-- /PORTFOLIO -->
+
+					<!-- CONTACT -->
+					<section data-id="#contact" class="pt-page pt-page-6">
+						<div class="section-title-block">
+							<h2 class="section-title">Contact</h2>
+							<!-- <h5 class="section-description">me</h5> -->
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6 col-md-6 subpage-block">
+								<div class="block-title">
+									<h3>Get in Touch</h3>
+								</div>
+								<p>If you would like to discuss projects,
+									 please feel free to contact me.</p>
+								<div class="contact-info-block">
+									<div class="ci-icon">
+										<i class="pe-7s-icon pe-7s-map-marker"></i>
+									</div>
+									<div class="ci-text">
+										<h5>Sofia, Bulgaria, EU</h5>
+									</div>
+								</div>
+								<div class="contact-info-block">
+									<div class="ci-icon">
+										<i class="pe-7s-icon pe-7s-mail"></i>
+									</div>
+									<div class="ci-text">
+										<h5>philip.ganchev.eu@gmail.com</h5>
+									</div>
+								</div>
+								<!-- <div class="contact-info-block">
+									<div class="ci-icon">
+										<i class="pe-7s-icon pe-7s-call"></i>
+									</div>
+									<div class="ci-text">
+										<h5>***********</h5>
+									</div>
+								</div> -->
+							</div>
+
+							<div class="col-sm-6 col-md-6 subpage-block">
+								<div class="block-title">
+									<h3>Contact Form</h3>
+								</div>
+								<form id="contact-form" method="post">
+									<div class="messages"></div>
+
+									<div class="controls">
+										<div class="form-group">
+											<input id="form_name" type="text" name="name" class="form-control"
+												   placeholder="Name" required="required" autocomplete="name"
+												   data-error="Please enter your name." />
+											<div class="form-control-border"></div>
+											<label for="form_name" class="form-control-icon fa fa-user"></label>
+											<div class="help-block with-errors"></div>
+										</div>
+
+										<div class="form-group">
+											<input id="form_email" type="email" name="email" class="form-control"
+												   placeholder="Email" required="required" autocomplete="email"
+												   data-error="Please enter a valid email." />
+											<div class="form-control-border"></div>
+											<label for="form_email" class="form-control-icon fa fa-envelope"></label>
+											<div class="help-block with-errors"></div>
+										</div>
+
+										<div class="form-group">
+											<textarea id="form_message" name="message" class="form-control"
+													  placeholder="Message" rows="4" required="required"
+													  data-error="Please enter your message."></textarea>
+											<div class="form-control-border"></div>
+											<label for="form_message" class="form-control-icon fa fa-comment"></label>
+											<div class="help-block with-errors"></div>
+										</div>
+
+										<div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI"
+											 data-callback="correctCaptcha"></div>
+
+										<input type="submit" class="button btn-send" value="Send Message" />
+									</div>
+								</form>
+							</div>
+						</div>
+					</section>
+					<!-- /CONTACT -->
+				</div>
+			</div>
+			<!-- /PAGE CHANGER WRAPPER -->
+		</div>
+		<!-- /MAIN CONTENT -->
+
+		<div id="loading">
+			<div class="loader JS_on">
+				<span class="binary"></span>
+				<span class="binary"></span>
+			</div>
+		</div>
+
+		<div id="to-top-button"><i></i></div>
+	</div>
+
+	<link rel="stylesheet" href="css/bootstrap.css?v=1" />
+	<link rel="stylesheet" href="css/normalize.css?v=1" />
+	<link rel="stylesheet" href="css/transition-animations.css?v=1" />
+	<link rel="stylesheet" href="css/owl-carousel.css?v=1" />
+	<link rel="stylesheet" href="css/animate.css?v=1" />
+	<link rel="stylesheet" href="css/main.css?v=1" />
+
+	<script src="js/jquery-2.1.3.min.js?v=1"></script>
+	<script src="js/modernizr.custom.js?v=1"></script>
+	<script src="js/bootstrap.min.js?v=1"></script>
+	<script src="js/validator.js?v=1"></script>
+	<script src="js/masonry.pkgd.min.js?v=1"></script>
+	<script src="js/owl-carousel.min.js?v=1"></script>
+	<script src="js/jquery.hoverdir.js?v=1"></script>
+	<script src="js/main.js?v=1"></script>
+</body>
+</html>
