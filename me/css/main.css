@@ -284,10 +284,17 @@ textarea.form-control, textarea.form-control:focus {
 	padding-left: 15px;
 	overflow-x: hidden;
 	overflow-y: auto;
+	scroll-behavior: smooth;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	background-color: #f5f5f5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.pt-wrapper {
+		scroll-behavior: auto;
+	}
 }
 
 .pt-wrapper.scroll-auto {
@@ -305,6 +312,17 @@ textarea.form-control, textarea.form-control:focus {
 	width: 100%;
 	padding: 50px 70px 0 70px;
 	background-color: #fff;
+}
+
+/* Last section — give it room so it doesn't sit flush against the page end */
+section[data-id="#contact"] {
+	padding-bottom: 120px;
+}
+
+@media only screen and (max-width: 991px) {
+	section[data-id="#contact"] {
+		padding-bottom: 60px;
+	}
 }
 
 .no-js .pt-page {
@@ -426,7 +444,8 @@ textarea.form-control, textarea.form-control:focus {
 
 .loader .binary::before,
 .loader .binary::after {
-	font-family: "Lato";
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
 	font-size: 48px;
 	position: absolute;
 		top: 0;
@@ -816,6 +835,98 @@ ul.s-links li:last-child a {
 	z-index: 3;
 }
 
+/* Hide the cursor over the hero for a cleaner feel; keep it on links */
+section[data-id="#heading"] {
+	cursor: none;
+}
+
+section[data-id="#heading"] a {
+	cursor: pointer;
+}
+
+.scroll-hint {
+	position: absolute;
+	left: 50%;
+	bottom: 28px;
+	z-index: 4;
+	color: #eee;
+	font-size: 32px;
+	line-height: 1;
+	opacity: 0.85;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	-webkit-animation: scroll-hint-bounce 2s ease-in-out infinite;
+	animation: scroll-hint-bounce 2s ease-in-out infinite;
+}
+
+.scroll-hint:hover,
+.scroll-hint:focus {
+	color: #34c7a9;
+}
+
+.scroll-hint.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+@-webkit-keyframes scroll-hint-bounce {
+	0%, 100% { -webkit-transform: translate(-50%, 0); }
+	50% { -webkit-transform: translate(-50%, 8px); }
+}
+
+@keyframes scroll-hint-bounce {
+	0%, 100% { transform: translate(-50%, 0); }
+	50% { transform: translate(-50%, 8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scroll-hint {
+		-webkit-animation: none;
+		animation: none;
+	}
+}
+
+/* Social buttons under the hero info list. Shown only on mobile, where the
+   sidebar (which carries the same links) is collapsed behind the menu. */
+.hero-s-links {
+	display: none;
+	list-style: none;
+	margin: 18px 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+.hero-s-links li {
+	display: inline-block;
+	margin: 0 6px;
+}
+
+.hero-s-links li a {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid rgba(238, 238, 238, 0.5);
+	border-radius: 50%;
+	color: #eee;
+	text-align: center;
+	-webkit-transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+	transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-s-links li a i {
+	font-size: 18px;
+	line-height: 40px;
+}
+
+.hero-s-links li a:hover,
+.hero-s-links li a:focus {
+	color: #fff;
+	border-color: #34c7a9;
+	background-color: #34c7a9;
+}
+
 .home-page-block h2 {
 	color: #fff;
 	text-align: center;
@@ -900,7 +1011,18 @@ ul.s-links li:last-child a {
 /* /About me General info */
 
 /* Services */
+.service-row {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+}
+
 .service-block {
+	padding: 0 15px;
+	margin-bottom: 20px;
 	text-align: center;
 }
 
@@ -1366,6 +1488,43 @@ ul.s-links li:last-child a {
 
 /* End of Direction-Aware Hover Effect */
 
+/* Persistent caption for touch devices, where the hover overlay never shows */
+.portfolio-grid figure .item-caption {
+	display: none;
+}
+
+@media (hover: none) {
+	.portfolio-grid figure a > div {
+		display: none;
+	}
+
+	.portfolio-grid figure .item-caption {
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 30px 15px 12px;
+		background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+		color: #fff;
+		font-family: Oswald, Helvetica, sans-serif;
+		font-size: 15px;
+		line-height: 1.25;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+		pointer-events: none;
+	}
+
+	.portfolio-grid figure .item-caption:after {
+		content: 'Tap for details';
+		display: block;
+		margin-top: 3px;
+		font-family: 'PT Sans', Helvetica, sans-serif;
+		font-size: 12px;
+		color: #34c7a9;
+	}
+}
+
 /* =======================================
 7.5. Blog subpage
 ======================================= */
@@ -1722,7 +1881,17 @@ ul.s-links li:last-child a {
 9. Portfolio Full info page
 ============================================================================= */
 .portfolio-page-content {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	justify-content: center;
+	min-height: 100%;
 	padding-bottom: 60px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .portfolio-nav {
@@ -1794,33 +1963,13 @@ ul.s-links li:last-child a {
 	margin: 0;
 }
 
-.share-buttons {
-	margin: 25px 0 0;
+.app-badges {
+	margin: 15px 0 0;
 }
 
-.share-buttons a {
+.app-badges a {
 	display: inline-block;
-	margin: 0 7px 0 0;
-	padding: 0;
-	width: 28px;
-	height: 28px;
-	color: #888;
-	background-color: #eee;
-	text-align: center;
-}
-
-.share-buttons a:hover {
-	color: #fff;
-	background-color: #34c7a9;
-}
-
-.share-buttons a:last-child {
-	margin-right: 0;
-}
-
-.share-buttons a i {
-	font-size: 14px;
-	line-height: 28px;
+	margin: 0 8px 8px 0;
 }
 
 /* Tags Block */
@@ -1986,6 +2135,20 @@ ul.s-links li:last-child a {
 
 	.pt-page {
 		padding: 25px 20px 30px;
+	}
+
+	/* Keep the hero full-bleed on mobile (like desktop) and size it to the
+	   viewport minus the 50px fixed header, so it fills exactly one screen. */
+	.pt-page-1 {
+		padding: 0;
+	}
+
+	.home-page-block {
+		height: calc(100vh - 50px);
+	}
+
+	.hero-s-links {
+		display: block;
 	}
 
 	.mobile-menu-hide {

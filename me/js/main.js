@@ -3,6 +3,11 @@
 
 	console.log('Please don\'t judge my techincal skills by what you see here :)')
 
+	// Contact address, assembled at runtime from encoded parts so it never
+	// appears as a plain string (or an email-shaped substring) that a scraper
+	// can pull from the HTML or this script.
+	var contactEmail = atob('cGhpbGlwLmdhbmNoZXYuZXU=') + String.fromCharCode(64) + atob('Z21haWwuY29t');
+
     // Contact form validator
     $(function() {
 		var $form = $('#contact-form');
@@ -13,7 +18,7 @@
             if (!e.isDefaultPrevented()) {
                 $.ajax({
                     type: 'POST',
-                    url: 'https://formsubmit.co/philip.ganchev.eu@gmail.com',
+                    url: 'https://formsubmit.co/' + contactEmail,
                     data: $(this).serialize(),
                     success: function (data) {
                         var messageAlert = 'alert-success';
@@ -107,12 +112,17 @@
 		    var $that = $(this);
 		    event.preventDefault();
 
-			$('.pt-wrapper').animate({
-				scrollTop: $('section[data-id="' + $(this).attr('href') + '"]')[0].offsetTop
-			}, 700, function() {
-				$navs.removeClass('active');
-				$that.parent().addClass('active');
+			var section = document.querySelector('section[data-id="' + $(this).attr('href') + '"]');
+			if (!section) return;
+
+			var wrapper = document.querySelector('.pt-wrapper');
+			wrapper.scrollTo({
+				top: section.getBoundingClientRect().top - wrapper.getBoundingClientRect().top + wrapper.scrollTop,
+				left: 0
 			});
+
+			$navs.removeClass('active');
+			$that.parent().addClass('active');
 		});
 
 		$navs.find('a[href="' + window.location.hash + '"]').click();
@@ -136,6 +146,39 @@
 			});
 		});
 
+		// Heading scroll hint
+		var $scrollHint = $('.scroll-hint');
+		$scrollHint.on('click', function(event) {
+			event.preventDefault();
+			$navs.find('a[href="#about"]').click();
+		});
+		$('.pt-wrapper').on('scroll.hint', function() {
+			$scrollHint.toggleClass('is-hidden', $(this).scrollTop() > 40);
+		});
+
+		// Live local time next to the contact location (falls back to the
+		// static "GMT+2" in the markup if this doesn't run)
+		var $localTime = $('#local-time');
+		if ($localTime.length) {
+			var setLocalTime = function() {
+				$localTime.text(new Date().toLocaleTimeString('en-GB', {
+					timeZone: 'Europe/Sofia',
+					hour: '2-digit',
+					minute: '2-digit'
+				}) + ' local time');
+			};
+			setLocalTime();
+			setInterval(setLocalTime, 60000);
+		}
+
+		// Drop the contact address into every .js-email placeholder (kept out
+		// of the static markup so scrapers that don't run JS never see it)
+		$('.js-email').each(function() {
+			$(this).empty().append(
+				$('<a>').attr('href', 'mailto:' + contactEmail).text(contactEmail)
+			);
+		});
+
 		// Print mode
 		$('.s-links .tip.print').on('click', function() {
 			$('<link>')
@@ -144,10 +187,10 @@
 					id: 'print-styles',
 					type: 'text/css', 
 					rel: 'stylesheet',
-					href: 'css/print.css'
+					href: 'css/print.css?v=2'
 				});
 
-			$('#mail-address').html('philip.ganchev.eu@gmail.com');
+			$('#mail-address').text(contactEmail);
 			$('#rotate').html('<p class="home-page-description">Software engineer</p>');
 
 			window.location.hash = '';
@@ -187,7 +230,7 @@
 			$loadingWrapper.show();
 			clearTimeout(ajaxLoadTimeout);
 
-			$ajaxLoadedContent.load('projects/' + $(this).attr('href'), function() {
+			$ajaxLoadedContent.load('projects/' + $(this).attr('href') + '?v=3', function() {
 				time = new Date().getMilliseconds() - time;
 				ajaxLoadTimeout = setTimeout(function() {
 					$loadingWrapper.hide();
@@ -210,9 +253,13 @@
 			closeProject();
 		});
 
-        $('#portfolio_grid > figure > a').each(function() {
-        	$(this).hoverdir();
-        });
+        // Direction-aware hover overlay — skip on touch devices, where a
+        // persistent caption is shown instead (see .item-caption)
+        if (!window.matchMedia || !window.matchMedia('(hover: none)').matches) {
+        	$('#portfolio_grid > figure > a').each(function() {
+        		$(this).hoverdir();
+        	});
+        }
 
         // Mobile menu
         $('.menu-toggle').click(function() {
@@ -228,7 +275,7 @@
 		$back_to_top.on('click', function(event) {
 			event.preventDefault();
 
-			$('.pt-wrapper').animate({ scrollTop: 0 }, 700);
+			document.querySelector('.pt-wrapper').scrollTo({ top: 0, left: 0 });
 		});
 
 		// Play/Pause on video click
@@ -236,9 +283,10 @@
 			this.paused ? this.play() : this.pause();
 		});
 
-		var age = Math.abs(new Date() - new Date('1993/03/11 00:00:01'));
-		age = Math.floor(age / 31556926000);
-		$('#info-age').html(age);
+		// Years of professional experience, counted from the first developer role
+		var experienceStart = new Date('2012/01/01 00:00:01');
+		var experienceYears = Math.floor(Math.abs(new Date() - experienceStart) / 31556926000);
+		$('#info-experience').html(experienceYears + '+ years');
     });
 
     // Mobile menu hide
@@ -267,7 +315,9 @@ function initLines() {
 	var MAX_DISTANCE  = 200,
 		PARTICLES     = 50,
 		PARTICLE_SIZE = 7,
-		LINE_WIDTH = 3;
+		LINE_WIDTH = 3,
+		MIN_SPEED = 0.2,          // px per frame, per axis
+		MAX_SPEED = 0.65;
 
 	// No configure! :p
 	Math.Tau = Math.PI * 2;
@@ -348,8 +398,8 @@ function initLines() {
 		this.y  = y;
 		this.s  = size;
 		this.r  = size / 2;
-		this.vx = (Math.random() < 0.5 ? -1 : 1) * Math.rand(0.3, 1);
-		this.vy = (Math.random() < 0.5 ? -1 : 1) * Math.rand(0.3, 1);
+		this.vx = (Math.random() < 0.5 ? -1 : 1) * (MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED));
+		this.vy = (Math.random() < 0.5 ? -1 : 1) * (MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED));
 		this.id = particleCounter++;
 
 		if (color instanceof Color) {

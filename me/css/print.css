@@ -36,6 +36,10 @@
 	display: none;
 }
 
+.scroll-hint {
+	display: none;
+}
+
 #main .home-page-block {
 	position: absolute;
     	right: 0;
@@ -65,19 +69,27 @@ section.pt-page {
 }
 
 .pt-page-2 .service-info {
-	position: absolute;
+	position: static;
 }
 
-.service-info.web-design {
-	left: 170px;
+.pt-page-2 .service-row {
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	height: auto;
 }
 
-.service-info.ux {
-	left: 300px;
+.pt-page-2 .service-block {
+	max-width: 90px;
+	margin: 0 25px 0 0;
+	padding: 0;
 }
 
-.service-row {
-	height: 130px;
+.pt-page-2 .service-block img {
+	max-width: 64px;
+	max-height: 48px;
+	margin-bottom: 8px;
 }
 
 .subpage-block .block-title h3 {
